@@ -118,6 +118,15 @@ module.exports = function(webpackEnv) {
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
       },
+      {
+        loader: require.resolve('less-loader'),
+        options: {
+          modules: false,
+          modifyVars: {
+            "@primary-color": "#f00"
+          }
+        }
+      }
     ].filter(Boolean);
     if (preProcessor) {
       loaders.push(
@@ -377,17 +386,23 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
+                  // [
+                  //   require.resolve('babel-plugin-named-asset-import'),
+                  //   {
+                  //     loaderMap: {
+                  //       svg: {
+                  //         ReactComponent:
+                  //           '@svgr/webpack?-svgo,+titleProp,+ref![path]',
+                  //       },
+                  //     },
+                  //   },
+                  // ],
                   [
-                    require.resolve('babel-plugin-named-asset-import'),
-                    {
-                      loaderMap: {
-                        svg: {
-                          ReactComponent:
-                            '@svgr/webpack?-svgo,+titleProp,+ref![path]',
-                        },
-                      },
-                    },
-                  ],
+                    'import',{
+                      libraryName: 'antd',
+                      style: true
+                    }
+                  ]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -533,7 +548,7 @@ module.exports = function(webpackEnv) {
               // its runtime that would otherwise be processed through "file" loader.
               // Also exclude `html` and `json` extensions so they get processed
               // by webpacks internal loaders.
-              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
+              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.less$/,/\.json$/],
               options: {
                 name: 'static/media/[name].[hash:8].[ext]',
               },
