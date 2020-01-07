@@ -1,9 +1,9 @@
 import React from 'react';
 import {Row, Col} from 'antd';
-import Header from './pages/components/Header/index'
-import Footer from './pages/components/Footer/index'
-import LeftNav from './pages/components/LeftNav/index'
-import './pages/style/commen.less'
+import Header from './components/Header/index'
+import Footer from './components/Footer/index'
+import LeftNav from './components/LeftNav/index'
+import './style/commen.less'
 
 export default class Admin extends React.Component {
 
