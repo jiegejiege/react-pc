@@ -117,15 +117,6 @@ module.exports = function(webpackEnv) {
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
-      },
-      {
-        loader: require.resolve('less-loader'),
-        options: {
-          modules: false,
-          modifyVars: {
-            "@primary-color": "#f00"
-          }
-        }
       }
     ].filter(Boolean);
     if (preProcessor) {
@@ -386,17 +377,17 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
-                  // [
-                  //   require.resolve('babel-plugin-named-asset-import'),
-                  //   {
-                  //     loaderMap: {
-                  //       svg: {
-                  //         ReactComponent:
-                  //           '@svgr/webpack?-svgo,+titleProp,+ref![path]',
-                  //       },
-                  //     },
-                  //   },
-                  // ],
+                  [
+                    require.resolve('babel-plugin-named-asset-import'),
+                    {
+                      loaderMap: {
+                        svg: {
+                          ReactComponent:
+                            '@svgr/webpack?-svgo,+titleProp,+ref![path]',
+                        },
+                      },
+                    },
+                  ],
                   [
                     'import',{
                       libraryName: 'antd',
