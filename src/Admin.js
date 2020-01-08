@@ -17,7 +17,7 @@ export default class Admin extends React.Component {
                 <Header className='header'/>
                 <Row className='content'>
                     <Row className='contentBox'>
-                    <Home></Home>
+                        {this.props.children}
                     </Row>
                 </Row>
                 <Footer className='footer'/>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './index.less';
 import MenuConfig from '../../config/MenuConfig.js'
 import { Menu } from 'antd';
@@ -8,7 +9,6 @@ export default class LeftNav extends React.Component {
 
     componentWillMount(){
       const menuTreeNode = this.renderMenu(MenuConfig);
-      console.log(menuTreeNode,this.renderMenu);
       this.setState({
         menuTreeNode
       })
@@ -25,7 +25,9 @@ export default class LeftNav extends React.Component {
           </SubMenu>
             )
           }
-        return  <Menu.Item key={item.key} title={item.title} >{item.title}</Menu.Item>
+        return  <Menu.Item key={item.key} title={item.title} >
+          <NavLink to={item.key}>{item.title}</NavLink>
+          </Menu.Item>
         })
     }
     render () {
