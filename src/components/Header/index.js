@@ -21,7 +21,9 @@ export default class Header extends React.Component {
             <Col span={24} className='headerUesrinfo'><span>{this.state.username}</span><span><a href=" # ">退出</a></span></Col>
         </Row>
             <Row className='weatherBox' >
-                <Col span={18} className='time'></Col>
+                <Col span={18} className='time'>
+                    <div className='bread'><p>首页</p></div>
+                </Col>
                 <Col span={6} className='weather'><span>{this.state.time}</span><span>天气</span></Col>
         </Row>
         </div>)

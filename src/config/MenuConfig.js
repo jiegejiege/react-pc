@@ -35,7 +35,22 @@ const  MenuConfig =
             key:'/admin/customer'
         },{
             'title':'商品管理',
-            key:'/admin/goods'
+            key:'/admin/goods',
+            children:[
+                {
+                    title:'食品',
+                    key:'/admin/goods/food'
+                },
+                {
+                    title:'药品',
+                    key:'/admin/goods/medicine'
+                },
+                {
+                    title:'服装',
+                    key:'/admin/goods/clouth'
+                }
+                 
+            ]
         },
         {
             'title':'业务管理',
