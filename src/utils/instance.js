@@ -28,7 +28,7 @@ instance.interceptors.response.use(
 
     return Promise.reject(error);
   }
-);
+);  
 
 export function get(url, params) {
   return instance.get(url, { params });

@@ -1,4 +1,4 @@
-import {get, post} from './instance';
+import {get} from './instance';
 
 //请求轮播图
 export function getBanner() {

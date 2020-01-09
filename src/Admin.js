@@ -3,7 +3,6 @@ import {Row, Col} from 'antd';
 import Header from './components/Header/index'
 import Footer from './components/Footer/index'
 import LeftNav from './components/LeftNav/index'
-import Home from './pages/Home/index'
 import './style/commen.less'
 
 export default class Admin extends React.Component {
