@@ -5,8 +5,10 @@ import {Row} from 'antd';
 export default class Login extends React.Component {
 
     render () {
-        return <Row className='footer'>
-            这是Login 
-        </Row>
+        return (
+            <Row className='footer'>
+                这是Login 
+            </Row>
+        )
     }
 }

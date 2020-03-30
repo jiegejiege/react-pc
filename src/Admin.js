@@ -8,19 +8,21 @@ import './style/commen.less'
 export default class Admin extends React.Component {
 
     render () {
-        return <Row className='container'>
-            <Col span={3} className='leftNav'>
-                <LeftNav />
-            </Col>
-            <Col span={21} className='main'>
-                <Header className='header'/>
-                <Row className='content'>
-                    <Row className='contentBox'>
-                        {this.props.children}
+        return (
+            <Row className='container'>
+                <Col span={3} className='leftNav'>
+                    <LeftNav />
+                </Col>
+                <Col span={21} className='main'>
+                    <Header className='header'/>
+                    <Row className='content'>
+                        <Row className='contentBox'>
+                            {this.props.children}
+                        </Row>
                     </Row>
-                </Row>
-                <Footer className='footer'/>
-            </Col>
-        </Row>
+                    <Footer className='footer'/>
+                </Col>
+            </Row>
+        )
     }
 }

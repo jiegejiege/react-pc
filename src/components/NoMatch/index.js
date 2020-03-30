@@ -5,8 +5,10 @@ import {Row} from 'antd';
 export default class NoMatch extends React.Component {
 
     render () {
-        return <Row className='footer' style={{textAlign:"center",color:'red'}}>
-            <h1>Oops,Page not found!</h1>
-        </Row>
+        return (
+            <Row className='footer' style={{textAlign:"center",color:'red'}}>
+                <h1>Oops,Page not found!</h1>
+            </Row>
+        )
     }
 }

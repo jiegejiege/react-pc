@@ -18,24 +18,27 @@ export default class LeftNav extends React.Component {
           if(item.children){
             return (
               <SubMenu
-            key={item.key}
-            title={item.title}
-          >
-            {this.renderMenu(item.children)}
-          </SubMenu>
+                key={item.key}
+                title={item.title} >
+                {this.renderMenu(item.children)}
+              </SubMenu>
             )
           }
-        return  <Menu.Item key={item.key} title={item.title} >
-          <NavLink to={item.key}>{item.title}</NavLink>
+        return (
+          <Menu.Item key={item.key} title={item.title} >
+            <NavLink to={item.key}>{item.title}</NavLink>
           </Menu.Item>
-        })
+        )
+      })
     }
     render () {
-        return <div className='leftBox'>
-                    <img className='logo' alt='hello world' src='https://assets.souche.com/projects/jupiter-f2e/jupiter-pc/img/logo_02.44959e27.png'/>
-                    <Menu theme="dark">
-                      {this.state.menuTreeNode}
-                    </Menu>
-        </div>
+        return (
+          <div className='leftBox'>
+            <img className='logo' alt='hello world' src='https://assets.souche.com/projects/jupiter-f2e/jupiter-pc/img/logo_02.44959e27.png'/>
+            <Menu theme="dark">
+              {this.state.menuTreeNode}
+            </Menu>
+          </div>
+        )
     }
 }

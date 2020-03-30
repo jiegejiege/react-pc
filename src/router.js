@@ -12,20 +12,20 @@ export default class  Router extends React.Component {
     render() {
         return (
             <HashRouter >
-            <App>
-                <Redirect to={{pathname:'/admin/home'}} />
-                <Route path='/login' component={Login} />
-                <Route path='/admin' render={()=>
-                <Admin>
-                    <Switch>
-                        <Route  path='/admin/home' component={Home} />
-                        <Route  path='/admin/ui/buttons' component={Buttons} />
-                        <Route  component={NoMatch} />
-                    </Switch>
-                </Admin>
-            } />
-            </App>
-        </HashRouter>
+                <App>
+                    <Redirect to={{pathname:'/admin/home'}} />
+                    <Route path='/login' component={Login} />
+                    <Route path='/admin' render={()=>
+                        <Admin>
+                            <Switch>
+                                <Route  path='/admin/home' component={Home} />
+                                <Route  path='/admin/ui/buttons' component={Buttons} />
+                                <Route  component={NoMatch} />
+                            </Switch>
+                        </Admin>
+                    } />
+                </App>
+            </HashRouter>
         )
         
        
