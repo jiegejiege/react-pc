@@ -1,16 +1,32 @@
 import React from 'react';
-import { Row } from 'antd';
+import { Row,Button,Col } from 'antd';
 import './index.less';
-import { getBanner } from '../../utils/api.js'
+import appStore from '../../store/index'
+// import { getBanner } from '../../utils/api.js'
+import { observer } from 'mobx-react';
 
-export default class Home extends React.Component {
+@observer
+class Home extends React.Component {
 
     render() {
-        getBanner().then(res => console.log(res))
+        const store = appStore;
+        // getBanner().then(res => console.log(res))
         return (
             <Row className='homeMain'>
-                这是home页面的内容
+                <p>这里是测试的store </p>   
+                <h1>{store.timer}</h1>
+                <Col span={6} className='time'>
+                    <Button type="primary" onClick={()=>store.decrease()} size={'large'}>minus</Button>
+                </Col>
+                <Col span={6} className='time'>
+                    <Button  type={'danger'} onClick={()=>store.resetTimer()} size={'large'}>reset</Button>
+                </Col>
+                <Col span={6} className='time'>
+                    <Button type="primary" onClick={()=>store.increase()} size={'large'}>add</Button>
+                </Col>
             </Row>
         )
     }
 }
+
+export default Home

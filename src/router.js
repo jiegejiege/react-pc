@@ -5,14 +5,15 @@ import Login from './components/Login/index';
 import Buttons from './components/Buttons/index';
 import Admin from './Admin.js'
 import Home from './pages/Home/index'
-import NoMatch from './components/NoMatch/index'
+import NoMatch from './components/NoMatch/index';
+import store from './store/index';
 
 export default class  Router extends React.Component {
 
     render() {
         return (
             <HashRouter >
-                <App>
+                <App appstore={store}>
                     <Redirect to={{pathname:'/admin/home'}} />
                     <Route path='/login' component={Login} />
                     <Route path='/admin' render={()=>

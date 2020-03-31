@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "7.7.4",
+    "@babel/core": "^7.7.4",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -42,6 +42,8 @@
     "less": "^2.7.3",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.8.0",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.1.8",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.5.0",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -138,6 +140,14 @@
     ]
   },
   "babel": {
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
+    ],
     "presets": [
       "react-app"
     ]
